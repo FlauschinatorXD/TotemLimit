@@ -1,0 +1,39 @@
+# ==========================================
+#            TotemLimit Configuration
+# ==========================================
+
+# Maximum number of totems a player may carry
+# (inventory + hotbar + offhand + armor slots + item on the cursor).
+max-totems: 1
+
+# Also count totems stored inside shulker boxes and bundles in the inventory?
+count-in-containers: true
+
+# Ignore players in creative or spectator mode?
+# (Recommended: true - in creative mode the client can create items freely.)
+ignore-creative: true
+
+# How often (in ticks) all online players are additionally checked. 20 ticks = 1 second.
+# Catches edge cases such as /give or items added by other plugins.
+check-interval-ticks: 20
+
+# What happens to totems above the limit?
+# DROP   = drop them at the player's feet
+# DELETE = delete them
+excess-action: DROP
+
+# Minimum time between two messages to the same player (milliseconds).
+message-cooldown-ms: 2000
+
+# Messages use the MiniMessage format (https://docs.advntr.dev/minimessage/format)
+# Placeholders: <limit>, <amount>, <removed>, <player>
+messages:
+  prefix: "<dark_gray>[<gold>TotemLimit</gold>]</dark_gray> "
+  over-limit-drop: "<red>You may only carry <gold><limit></gold> totem(s)! <gray><removed> totem(s) were dropped at your feet."
+  over-limit-delete: "<red>You may only carry <gold><limit></gold> totem(s)! <gray><removed> totem(s) were removed."
+  pickup-blocked: "<red>You have already reached the limit of <gold><limit></gold> totem(s)!"
+  reloaded: "<green>Config reloaded. Limit: <gold><limit></gold>"
+  limit-set: "<green>Totem limit set to <gold><limit></gold>."
+  check: "<yellow><player></yellow> <gray>has</gray> <gold><amount></gold> <gray>totem(s) (limit: <limit>)."
+  player-not-found: "<red>Player not found."
+  usage: "<gray>/totemlimit reload | set [amount] | check [player]"

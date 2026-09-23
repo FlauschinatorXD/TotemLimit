@@ -1,0 +1,15 @@
+name: TotemLimit
+version: '${project.version}'
+main: io.github.flauschinatorxd.totemlimit.TotemLimitPlugin
+api-version: '26.1'
+description: '${project.description}'
+author: FlauschinatorXD
+website: '${project.url}'
+
+permissions:
+  totemlimit.bypass:
+    description: Players with this permission ignore the totem limit.
+    default: false
+  totemlimit.admin:
+    description: Access to /totemlimit (reload, set, check).
+    default: op
